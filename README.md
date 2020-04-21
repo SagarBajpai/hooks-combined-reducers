@@ -3,8 +3,8 @@
 [![Github issues](https://img.shields.io/github/issues/SagarBajpai/hooks-combined-reducers)](https://github.com/SagarBajpai/hooks-combined-reducers/issues) 
 [![Github forks](https://img.shields.io/github/forks/SagarBajpai/hooks-combined-reducers)](https://github.com/SagarBajpai/hooks-combined-reducers) 
 [![Github stars](https://img.shields.io/github/stars/SagarBajpai/hooks-combined-reducers)](https://github.com/SagarBajpai/hooks-combined-reducers/stargazers) 
-[![Github license](https://img.shields.io/github/license/SagarBajpai/hooks-combined-reducers)]() 
-[![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FSagarBajpai%2Fhooks-combined-reducers)]()
+[![Github license](https://img.shields.io/github/license/SagarBajpai/hooks-combined-reducers)](https://github.com/SagarBajpai/hooks-combined-reducers/blob/master/LICENSE.md) 
+[![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FSagarBajpai%2Fhooks-combined-reducers)](https://twitter.com/sagarbajpai_)
 
 Its a custom hook to combine all your useReducer hooks in return for one global state container with one dispatch function. You can use it at the top-level component & it will pass a dispatch and state functions down with the help of React's Context API with Provider and Consumer (or useContext).
 
@@ -16,7 +16,7 @@ Its a custom hook to combine all your useReducer hooks in return for one global 
 
 Create a global dispatch function and state object by initializing multiple `useReducer` hooks in `hookCombinedReducers`:
 
-Inside some file name as `Context.js`:
+Inside some file named as `Context.js`:
 ```
 import React, { useReducer } from "react";
 import hooksCombinedReducers from 'hooks-combined-reducers';
@@ -57,7 +57,7 @@ function App(){
 export default App;
 ```
 
-Inside some component name `AppComponent.js`:
+Inside some component with name `AppComponent.js`:
 
 ```
 import React, { useEffect, useContext } from "react";

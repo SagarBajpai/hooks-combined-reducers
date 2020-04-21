@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "author": "sagarbajpai",
   "license": "MIT",
-  "repository": "sagarbajpai/hooks-combined-reducers",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sagarbajpai/hooks-combined-reducers.git"
+  },
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -57,5 +60,26 @@
   "files": [
     "dist"
   ],
-  "dependencies": {}
+  "dependencies": {},
+  "description": "[![Github issues](https://img.shields.io/github/issues/SagarBajpai/hooks-combined-reducers)](https://github.com/SagarBajpai/hooks-combined-reducers/issues) \r [![Github forks](https://img.shields.io/github/forks/SagarBajpai/hooks-combined-reducers)](https://github.com/SagarBajpai/hooks-combined-reducers) \r [![Github stars](https://img.shields.io/github/stars/SagarBajpai/hooks-combined-reducers)](https://github.com/SagarBajpai/hooks-combined-reducers/stargazers) \r [![Github license](https://img.shields.io/github/license/SagarBajpai/hooks-combined-reducers)]() \r [![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FSagarBajpai%2Fhooks-combined-reducers)]()",
+  "bugs": {
+    "url": "https://github.com/sagarbajpai/hooks-combined-reducers/issues"
+  },
+  "homepage": "https://github.com/sagarbajpai/hooks-combined-reducers#readme",
+  "directories": {
+    "example": "example"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "react",
+    "hooks",
+    "hooks",
+    "redux",
+    "useContext",
+    "useReducer",
+    "contextApi",
+    "combinedReducers",
+    "hooksCombinedReducers"
+  ]
 }
