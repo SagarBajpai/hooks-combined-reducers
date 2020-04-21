@@ -1,6 +1,6 @@
 {
-  "name": "react-mini-toaster-example",
-  "homepage": "https://sagarbajpai.github.io/react-mini-toaster",
+  "name": "hooks-combined-reducers-example",
+  "homepage": "https://sagarbajpai.github.io/hooks-combined-reducers",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
@@ -9,7 +9,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "^1.1.4",
-    "react-mini-toaster": "file:.."
+    "hooks-combined-reducers": "file:.."
   },
   "scripts": {
     "start": "react-scripts start",

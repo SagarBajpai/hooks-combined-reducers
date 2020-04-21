@@ -1,27 +1,16 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import Toaster from './Components/Screens/Toaster/Toaster'
+const hooksCombinedReducers = (combinedReducers) => {
+  // Here we have are  Global State
+  const state = Object.keys(combinedReducers).reduce((acc, key) => {
+    return { ...acc, [key]: combinedReducers[key][0] };
+  });
 
-export default class App extends Component {
-  static propTypes = {
-    isVisible: PropTypes.bool,
-    type: PropTypes.string,
-    header: PropTypes.string,
-    message: PropTypes.string,
-    onClick: PropTypes.func,
-  }
+  // Here we have are Global Dispatch Function
+  const dispatch = (action) => {
+    Object.keys(combinedReducers)
+      .map((key) => combinedReducers[key][1])
+      .forEach((fn) => fn(action));
+  };
+  return [state, dispatch];
+};
+export default hooksCombinedReducers;
 
-  render() {
-    const {isVisible, type, header, message, onClick} = this.props
-
-    return (
-      <Toaster
-        isVisible={isVisible}
-        type={type}
-        header={header}
-        message={message}
-        onClick={onClick}
-      />
-    )
-  }
-}
