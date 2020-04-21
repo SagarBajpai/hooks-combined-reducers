@@ -6,7 +6,7 @@ function AppComponent() {
   const dispatch = useContext(DispatchContext);
 
   useEffect(() => {
-    dispatch({ type: "TABLE_CHECK_BOXES", value: "yo yo" });
+    dispatch({ type: "CHANGE_ACCESS", value: 1 });
   }, []);
   return <div>Hello There!</div>;
 }
