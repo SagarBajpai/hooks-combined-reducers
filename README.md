@@ -1,9 +1,9 @@
 # hooksCombinedReducers React Hook
 
-[![Github issues](https://img.shields.io/github/issues/SagarBajpai/hooks-combined-reducers)](https://github.com/SagarBajpai/hooks-combined-reducers/issues) 
-[![Github forks](https://img.shields.io/github/forks/SagarBajpai/hooks-combined-reducers)](https://github.com/SagarBajpai/hooks-combined-reducers) 
-[![Github stars](https://img.shields.io/github/stars/SagarBajpai/hooks-combined-reducers)](https://github.com/SagarBajpai/hooks-combined-reducers/stargazers) 
-[![Github license](https://img.shields.io/github/license/SagarBajpai/hooks-combined-reducers)](https://github.com/SagarBajpai/hooks-combined-reducers/blob/master/LICENSE.md) 
+[![Github issues](https://img.shields.io/github/issues/SagarBajpai/hooks-combined-reducers)](https://github.com/SagarBajpai/hooks-combined-reducers/issues)
+[![Github forks](https://img.shields.io/github/forks/SagarBajpai/hooks-combined-reducers)](https://github.com/SagarBajpai/hooks-combined-reducers)
+[![Github stars](https://img.shields.io/github/stars/SagarBajpai/hooks-combined-reducers)](https://github.com/SagarBajpai/hooks-combined-reducers/stargazers)
+[![Github license](https://img.shields.io/github/license/SagarBajpai/hooks-combined-reducers)](https://github.com/SagarBajpai/hooks-combined-reducers/blob/master/LICENSE.md)
 [![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2FSagarBajpai%2Fhooks-combined-reducers)](https://twitter.com/sagarbajpai_)
 
 Its a custom hook to combine all your useReducer hooks in return for one global state container with one dispatch function. You can use it at the top-level component & it will pass a dispatch and state functions down with the help of React's Context API with Provider and Consumer (or useContext).
@@ -16,11 +16,34 @@ Its a custom hook to combine all your useReducer hooks in return for one global 
 
 Create a global dispatch function and state object by initializing multiple `useReducer` hooks in `hookCombinedReducers`:
 
+Create your reducer first, in some file `Table.js` inside any Reducer folder
+
+```
+const tableState = {
+  selected: []
+};
+
+const tableReducer = (state, action) => {
+  switch (action.type) {
+    case "TABLE_CHECK_BOXES":
+      return {
+        ...state,
+        selected: action.value,
+      };
+    default:
+      return state;
+  }
+};
+export { tableState, tableReducer };
+
+```
+
 Inside some file named as `Context.js`:
+
 ```
 import React, { useReducer } from "react";
 import hooksCombinedReducers from 'hooks-combined-reducers';
-import { tableState, tableReducer } from "../StateManagement/Reducers/Table";
+import { tableState, tableReducer } from "./Reducers/Table";
 
 export const StateContext = React.createContext();
 export const DispatchContext = React.createContext();
@@ -41,16 +64,17 @@ export { HookProvider };
 ```
 
 Inside root file `App.js` :
+
 ```
 import React from 'react';
-import { CounterProvider } from "./Context";
+import { HookProvider } from "./Context";
 import AppComponent from "./AppComponent";
 
 function App(){
   return (
-    <CounterProvider>
+    <HookProvider>
       <AppComponent />
-    </CounterProvider>
+    </HookProvider>
   )
 }
 
@@ -68,7 +92,7 @@ function AppComponent() {
   const dispatch = useContext(DispatchContext);
 
   useEffect(() => {
-    dispatch({ type: "CHANGE_ACCESS", value: 1 });
+    dispatch({ type: "TABLE_CHECK_BOXES", value: [0] });
   }, []);
   return <div>Hello There!</div>;
 }
@@ -79,11 +103,12 @@ export default AppComponent;
 
 ## Contribute
 
-* `git clone https://github.com/SagarBajpai/hooks-combined-reducers.git`
-* `cd hooks-combined-reducers`
-* `npm install`
+- `git clone https://github.com/SagarBajpai/hooks-combined-reducers.git`
+- `cd hooks-combined-reducers`
+- `npm install`
 
-## Want to know the developer behind this package? 
+## Want to know the developer behind this package?
+
 [LinkedIn](https://www.linkedin.com/in/sagarbajpai/)
 [Facebook](https://www.facebook.com/cameraluvssagar/)
 [Twitter](https://twitter.com/sagarbajpai_)
