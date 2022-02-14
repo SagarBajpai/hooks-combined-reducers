@@ -18,7 +18,7 @@ Create a global dispatch function and state object by initializing multiple `use
 
 Create your reducer first, in some file `Table.js` inside any Reducer folder
 
-```
+```javascript
 const tableState = {
   selected: []
 };
@@ -40,7 +40,7 @@ export { tableState, tableReducer };
 
 Inside some file named as `Context.js`:
 
-```
+```javascript
 import React, { useReducer } from "react";
 import hooksCombinedReducers from 'hooks-combined-reducers';
 import { tableState, tableReducer } from "./Reducers/Table";
@@ -65,7 +65,7 @@ export { HookProvider };
 
 Inside root file `App.js` :
 
-```
+```javascript
 import React from 'react';
 import { HookProvider } from "./Context";
 import AppComponent from "./AppComponent";
@@ -83,7 +83,7 @@ export default App;
 
 Inside some component with name `AppComponent.js`:
 
-```
+```javascript
 import React, { useEffect, useContext } from "react";
 import { StateContext, DispatchContext } from "./Context";
 
